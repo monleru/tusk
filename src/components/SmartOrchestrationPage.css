@@ -1,0 +1,112 @@
+.so-hero { height: 850px; padding-top: 170px; overflow: hidden; color: #fff; background: #10221d url('/assets/bg2.png') center top / cover no-repeat; }
+.so-hero__inner { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); gap: 36px; height: 100%; }
+.so-hero__copy { position: relative; align-self: start; top: 255px; transform: translateY(-50%); z-index: 2; }
+.so-hero h1, .so-cta h2, .so-benefit h3, .so-features h3 { font-family: 'Phudu', sans-serif; font-weight: 700; }
+.so-hero h1 { font-size: clamp(52px, 5vw, 76px); line-height: .98; letter-spacing: -.045em; margin: 0 0 28px; }
+.so-hero__copy p { max-width: 620px; color: rgba(255,255,255,.72); font-size: 19px; line-height: 1.45; margin: 0 0 52px; }
+.so-hero__visual { position: relative; min-width: 0; }
+.so-hero__graphic { position: absolute; width: 579px; max-width: none; height: 813px; left: 50%; top: -60px; transform: translateX(-50%); }
+.so-benefits { padding: 120px 0; }
+.so-benefits .section-title { margin-bottom: 140px; }
+.so-benefits__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 65px; }
+.so-benefit { text-align: center; }
+.so-benefit__icon { display: flex; align-items: center; justify-content: center; height: 145px; margin-bottom: 46px; }
+.so-benefit__icon svg { max-height: 141px; width: auto; }
+.so-benefit__icon img { height: 129px; width: auto; }
+.so-benefit h3 { text-transform: uppercase; font-size: 25px; line-height: 1.15; margin: 0 0 18px; }
+.so-benefit p { max-width: 340px; margin: 0 auto; font-size: 18px; line-height: 1.5; }
+.so-cta { background: #e5ff95; overflow: hidden; padding: 100px 0; }
+.so-cta__inner { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 100px; }
+.so-cta h2 { font-size: clamp(42px, 4vw, 62px); line-height: 1; letter-spacing: -.035em; margin: 0 0 30px; }
+.so-cta p { max-width: 510px; font-size: 19px; line-height: 1.45; margin: 0 0 52px; }
+.so-cta .so-cta__button { background: #102b24; color: #fff; }
+.so-cta .so-cta__button:hover { background: #263e38; }
+.so-cta__image { width: calc(100% + var(--page-gutter)); max-width: none; border-radius: 24px 0 0 24px; }
+.so-features { padding: 100px 0 40px; }
+.so-features .section-title { margin-bottom: 100px; }
+.so-features__row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 120px; }
+.so-features__row + .so-features__row { margin-top: 100px; }
+.so-features__row > img { width: 100%; height: auto; }
+.so-features__copy { display: grid; gap: 100px; }
+.so-features h3 { font-size: 26px; line-height: 1.15; margin: 0 0 18px; }
+.so-features p { font-size: 18px; line-height: 1.5; margin: 0; max-width: 560px; }
+@media (max-width: 1100px) {
+  .so-hero__inner { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 20px; }
+  .so-hero__graphic { width: 500px; height: auto; top: 0; }
+  .so-benefits__grid { gap: 32px; }
+  .so-cta__inner, .so-features__row { gap: 55px; }
+  .so-features__copy { gap: 60px; }
+}
+@media (max-width: 840px) {
+  .so-hero { height: auto; padding-top: 130px; }
+  .so-hero__inner { grid-template-columns: 1fr; gap: 45px; }
+  .so-hero__copy { top: auto; transform: none; }
+  .so-hero__visual { height: 620px; }
+  .so-hero__graphic { top: -60px; }
+  .so-benefits__grid { grid-template-columns: 1fr; gap: 55px; }
+  .so-cta__inner { grid-template-columns: 1fr; }
+  .so-cta__image { width: 100%; border-radius: 24px; }
+  .so-features__row { grid-template-columns: 1fr; gap: 45px; }
+  .so-features__row > img { max-width: 560px; margin-inline: auto; }
+  .so-features__row--reverse > img { grid-row: 1; }
+  .so-features__copy { gap: 40px; }
+}
+@media (max-width: 560px) {
+  .so-hero h1 { font-size: 42px; }
+  .so-hero__copy p { font-size: 17px; }
+  .so-hero__visual { height: 500px; }
+  .so-hero__graphic { width: 420px; top: -55px; }
+  .so-benefits { padding: 90px 0; }
+  .so-cta { padding: 70px 0; }
+  .so-cta h2 { font-size: 39px; }
+  .so-cta p { font-size: 17px; }
+  .so-features { padding-top: 90px; }
+  .so-features .section-title { margin-bottom: 60px; }
+  .so-features__row + .so-features__row { margin-top: 70px; }
+}
+
+/* Sequential payment processing selection. All parts share one timeline. */
+.so-hero__graphic .so-option-bg { animation: so-option-select 8s ease-in-out infinite; }
+.so-hero__graphic .so-option-check { transform-box: fill-box; transform-origin: center; animation: so-check-pop 8s ease-in-out infinite; }
+.so-hero__graphic .so-option-dot { transform-box: fill-box; transform-origin: center; animation: so-dot-grow 8s ease-in-out infinite; }
+.so-hero__graphic .so-option-2 { animation-delay: -6s; }
+.so-hero__graphic .so-option-3 { animation-delay: -4s; }
+.so-hero__graphic .so-option-4 { animation-delay: -2s; }
+@keyframes so-option-select {
+  0%, 23% { fill-opacity: 1; }
+  25%, 98% { fill-opacity: .3; }
+  100% { fill-opacity: 1; }
+}
+@keyframes so-check-pop {
+  0% { opacity: 0; transform: scale(.3); }
+  6% { opacity: 1; transform: scale(1.25); }
+  11%, 21% { opacity: 1; transform: scale(1); }
+  25%, 100% { opacity: 0; transform: scale(.3); }
+}
+@keyframes so-dot-grow {
+  0%, 25%, 100% { transform: scale(1); }
+  6%, 21% { transform: scale(2); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .so-hero__graphic :is(.so-option-bg, .so-option-check, .so-option-dot) { animation: none; }
+  .so-hero__graphic .so-option-bg.so-option-1 { fill-opacity: 1; }
+}
+
+.so-cta-reveal { overflow: hidden; overflow: clip; }
+.so-cta-reveal .so-cta {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 900ms cubic-bezier(.55, 0, .15, 1), opacity 250ms ease;
+}
+.so-cta-reveal .so-cta__image {
+  transform: translateX(110%);
+  opacity: 0;
+  transition: transform 900ms cubic-bezier(.55, 0, .15, 1) 180ms, opacity 250ms ease 180ms;
+}
+.so-cta-reveal.is-visible .so-cta,
+.so-cta-reveal.is-visible .so-cta__image { transform: translateX(0); opacity: 1; }
+.so-cta-reveal:focus-within .so-cta,
+.so-cta-reveal:focus-within .so-cta__image { transform: none; opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .so-cta-reveal .so-cta, .so-cta-reveal .so-cta__image { transform: none; opacity: 1; transition: none; }
+}

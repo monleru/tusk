@@ -1,0 +1,83 @@
+.cards-hero { height: 850px; padding-top: 170px; overflow: hidden; color: #fff; background: #10221d url('/assets/bg2.png') center top / cover no-repeat; }
+.cards-hero__inner { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); height: 100%; gap: 36px; }
+.cards-hero__copy { position: relative; align-self: start; top: 255px; transform: translateY(-50%); z-index: 2; }
+.cards-hero h1 { font-family: 'Phudu', sans-serif; font-weight: 700; font-size: clamp(52px, 5vw, 76px); line-height: .98; letter-spacing: -.045em; margin: 0 0 28px; }
+.cards-hero h1 span { color: #e2ff94; }
+.cards-hero__copy p { max-width: 620px; font-size: 19px; line-height: 1.45; margin: 0 0 52px; color: rgba(255,255,255,.72); }
+.cards-hero__visual { position: relative; min-width: 0; height: 100%; }
+.cards-hero__panel { position: absolute; isolation: isolate; width: min(100%, 380px); height: 640px; top: 40px; left: 50%; transform: translateX(-50%); border-radius: 24px 24px 0 0; }
+.cards-hero__panel::before { content: ''; position: absolute; z-index: -1; inset: 0; border: 2px solid rgba(197, 227, 230, .55); border-bottom: 0; border-radius: inherit; background: radial-gradient(ellipse at 0% 38%, rgba(199, 210, 203, .5), transparent 72%), linear-gradient(155deg, #577e85 0%, #29443e 80%); -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 35%, transparent 100%); mask-image: linear-gradient(to bottom, #000 0%, #000 35%, transparent 100%); pointer-events: none; }
+.cards-hero__cards { width: 100%; height: auto; margin-top: 42px; }
+.cards-hero__badge { position: absolute; width: 54px; height: 54px; right: -27px; top: 68%; }
+.cards-benefits { padding: 120px 0; }
+.cards-benefits .section-title { margin-bottom: 140px; }
+.cards-benefits__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 65px; }
+.cards-benefit { text-align: center; }
+.cards-benefit__icon { height: 150px; display: flex; align-items: center; justify-content: center; margin-bottom: 48px; }
+.cards-benefit__icon svg { max-height: 144px; width: auto; max-width: 200px; }
+.cards-benefit h3, .cards-features h3 { font-family: 'Phudu', sans-serif; font-size: 25px; font-weight: 700; text-transform: uppercase; line-height: 1.15; margin: 0 0 18px; }
+.cards-benefit h3 { max-width: 340px; margin-inline: auto; }
+.cards-benefit p { max-width: 350px; margin: 0 auto; font-size: 18px; line-height: 1.5; }
+.cards-cta { padding: 110px 0; min-height: 535px; display: grid; align-items: center; text-align: center; color: #fff; background: #102b24 url('../assets/MacBook Pro 16_ - 48.png') center / cover no-repeat; }
+.cards-cta .section-title { margin-bottom: 30px; }
+.cards-cta p { max-width: 1000px; margin: 0 auto 52px; font-size: 20px; line-height: 1.45; color: #ffffffbf; }
+.cards-features { padding: 120px 0; overflow: hidden; }
+.cards-features .section-title { margin-bottom: 100px; }
+.cards-features__row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; gap: 100px; }
+.cards-features__row + .cards-features__row { margin-top: 120px; }
+.cards-features__activity { width: 100%; height: auto; }
+.cards-features__copy { display: grid; gap: 90px; }
+.cards-features p { max-width: 550px; font-size: 18px; line-height: 1.5; margin: 0; }
+.cards-features__global { width: calc(100% + var(--page-gutter)); max-width: none; height: auto; }
+@media (max-width: 1100px) {
+  .cards-hero__inner { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); gap: 24px; }
+  .cards-hero__panel { width: 320px; }
+  .cards-hero__badge { top: 68%; }
+  .cards-benefits__grid { gap: 30px; }
+  .cards-features__row { gap: 50px; }
+  .cards-features__copy { gap: 55px; }
+}
+@media (max-width: 840px) {
+  .cards-hero { height: auto; padding-top: 130px; }
+  .cards-hero__inner { grid-template-columns: 1fr; gap: 60px; }
+  .cards-hero__copy { top: auto; transform: none; }
+  .cards-hero__visual { width: min(100%, 540px); height: 620px; margin-inline: auto; }
+  .cards-hero__panel { width: 380px; top: 0; height: 620px; }
+  .cards-hero__badge { top: 68%; }
+  .cards-benefits__grid { grid-template-columns: 1fr; gap: 60px; }
+  .cards-features__row { grid-template-columns: 1fr; gap: 45px; }
+  .cards-features__activity { max-width: 620px; margin-inline: auto; }
+  .cards-features__global { grid-row: 1; }
+}
+@media (max-width: 560px) {
+  .cards-hero h1 { font-size: 42px; }
+  .cards-hero__copy p { font-size: 17px; }
+  .cards-hero__visual { height: 530px; }
+  .cards-hero__panel { width: min(85%, 320px); height: 530px; }
+  .cards-hero__badge { top: 68%; right: -24px; width: 48px; height: 48px; }
+  .cards-cta .section-title { font-size: 36px; }
+  .cards-cta p { font-size: 18px; }
+  .cards-features .section-title { margin-bottom: 60px; }
+  .cards-features__copy { gap: 45px; }
+  .cards-features__row + .cards-features__row { margin-top: 70px; }
+}
+
+/* Entrance on page open, followed by the growth badge. */
+.cards-hero__panel { animation: cards-panel-enter 900ms cubic-bezier(.55, 0, .15, 1) both; }
+.cards-hero__badge { transform-origin: center; animation: cards-badge-grow 1600ms cubic-bezier(.22, 1, .36, 1) 900ms both; }
+@keyframes cards-panel-enter {
+  from { transform: translate(-50%, 100%); opacity: 0; }
+  to { transform: translate(-50%, 0); opacity: 1; }
+}
+@keyframes cards-badge-grow {
+  from { transform: scale(.15); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cards-hero__panel, .cards-hero__badge { animation: none; }
+}
+
+.cards-cta-reveal { overflow: hidden; overflow: clip; }
+.cards-cta-reveal .cards-cta { transform: scale(.2); opacity: 0; transform-origin: center; transition: transform 800ms cubic-bezier(.55, 0, .15, 1), opacity 300ms ease; }
+.cards-cta-reveal.is-visible .cards-cta, .cards-cta-reveal:focus-within .cards-cta { transform: scale(1); opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .cards-cta-reveal .cards-cta { transform: none; opacity: 1; transition: none; } }
