@@ -1121,6 +1121,7 @@ img, svg { display: block; max-width: 100%; }
 @media (width: 1920px) and (height: 1080px) {
   .section.benefits { padding-top: 0; }
   .hero .container.payment-strip { position: relative; top: 55px; }
+  .section.benefits .section-title { top: -105px; }
 }
 
 /* APM selection cycle: wallet, transfer, debit, wallet, straighten, return. */
